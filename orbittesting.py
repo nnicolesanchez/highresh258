@@ -1,5 +1,5 @@
 # This script opens and examines the files within:
-#       /astro1/nicole/highresh258/orbitfiledata
+#       /astro1/nicole/highresh258/orbitfiledata 
 
 # Vanderbilt Univ.  -- VPAC40:  /astro1/nicole/highresh258/orbittesting.py
 # N. Nicole Sanchez -- October 16, 2016 
