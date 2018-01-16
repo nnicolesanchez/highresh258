@@ -36,9 +36,9 @@ p_cold   = pynbody.analysis.profile.Profile(h1.g[h1_cold_mask])
 p_shock  = pynbody.analysis.profile.Profile(h1.g[h1_shock_mask])
 
 
-plt.plot(p_shock['rbins'],p_shock['density']/np.max(p_shock['density']), color='Red',label='Shocked, Max Density ='+str("%.4g" % np.max(p_shock['density'])))
-plt.plot(p_cold['rbins'],p_cold['density']/np.max(p_cold['density']), color='Blue',label='Cold, Max Density ='+str("%.4g" % np.max(p_cold['density'])))
-plt.plot(p_clumpy['rbins'],p_clumpy['density']/np.max(p_clumpy['density']), color='Green',label='Clumpy, Max Density ='+str("%.4g" % np.max(p_clumpy['density'])))
+plt.plot(np.log10(p_shock['rbins']),p_shock['density']/np.max(p_clumpy['density']), color='Red',label='Shocked, Normalized to Clumpy')
+plt.plot(np.log10(p_cold['rbins']),p_cold['density']/np.max(p_clumpy['density']), color='Blue',label='Cold, Normalized to Clumpy')
+plt.plot(np.log10(p_clumpy['rbins']),p_clumpy['density']/np.max(p_clumpy['density']), color='Green',label='Clumpy')
 plt.ylabel('Normalized Radial Density Profile of Gas in Main Halo')
 plt.xlabel('R [kpc]')
 plt.legend()
