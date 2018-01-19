@@ -31,9 +31,9 @@ h1_clumpy_mask = np.in1d(h1.g['iord'],h1_iords_clumpy)
 h1_cold_mask   = np.in1d(h1.g['iord'],h1_iords_cold)
 h1_shock_mask  = np.in1d(h1.g['iord'],h1_iords_shock)
 
-p_clumpy = pynbody.analysis.profile.Profile(h1.g[h1_clumpy_mask],min=0.3,type='log',nbins=50)
-p_cold   = pynbody.analysis.profile.Profile(h1.g[h1_cold_mask],min=0.3,type='log',nbins=50)
-p_shock  = pynbody.analysis.profile.Profile(h1.g[h1_shock_mask],min=0.3,type='log',nbins=50)
+p_clumpy = pynbody.analysis.profile.Profile(h1.g[h1_clumpy_mask],min=0.3,type='log',nbins=100)
+p_cold   = pynbody.analysis.profile.Profile(h1.g[h1_cold_mask],min=0.3,type='log',nbins=100)
+p_shock  = pynbody.analysis.profile.Profile(h1.g[h1_shock_mask],min=0.3,type='log',nbins=100)
 
 print(p_clumpy['rbins'][0:10],p_clumpy['rbins'].units)
 
