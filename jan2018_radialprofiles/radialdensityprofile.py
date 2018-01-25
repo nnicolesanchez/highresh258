@@ -37,6 +37,7 @@ p_shock  = pynbody.analysis.profile.Profile(h1.g[h1_shock_mask],min=0.3,type='lo
 
 print(p_clumpy['rbins'][0:10],p_clumpy['rbins'].units)
 
+# Normalized
 plt.plot(np.log10(p_clumpy['rbins']),p_clumpy['density']/np.max(p_clumpy['density']), color='Green',label='Clumpy')
 plt.plot(np.log10(p_cold['rbins']),p_cold['density']/np.max(p_clumpy['density']), color='Blue',label='Cold, Normalized to Clumpy')
 plt.plot(np.log10(p_shock['rbins']),p_shock['density']/np.max(p_clumpy['density']), color='Red',label='Shocked, Normalized to Clumpy')
@@ -45,4 +46,16 @@ plt.ylabel('Normalized Radial Density Profile of Gas in Main Halo')
 plt.xlabel('log(R) [kpc]')
 plt.legend()
 plt.savefig('radialdensityprofile.pdf')
+plt.show()
+
+
+# Ratios 
+plt.plot(np.log10(p_clumpy['rbins']),p_clumpy['mass']/np.sum(h1.g['mass']), color='Green',label='Clumpy')
+plt.plot(np.log10(p_cold['rbins']),p_cold['mass']/np.sum(h1.g['mass']), color='Blue',label='Cold')
+plt.plot(np.log10(p_shock['rbins']),p_shock['mass']/np.sum(h1.g['mass']), color='Red',label='Shocked')
+
+plt.ylabel('Mass Fraction Profile of Gas in Main Halo')
+plt.xlabel('log(R) [kpc]')
+plt.legend()
+plt.savefig('massfractionprofile.pdf')
 plt.show()
