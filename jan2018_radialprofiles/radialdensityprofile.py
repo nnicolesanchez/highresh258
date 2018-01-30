@@ -44,7 +44,7 @@ plt.plot(np.log10(p_clumpy['rbins']),p_clumpy['density']/total,color='Green',lab
 plt.plot(np.log10(p_cold['rbins']),p_cold['density']/total, color='Blue',label='Cold')
 plt.plot(np.log10(p_shock['rbins']),p_shock['density']/total, color='Red',label='Shocked')
 
-plt.ylabel('Normalized Radial Density Profile of Gas in Main Halo')
+plt.ylabel('Radial Density Profile')
 plt.xlabel('log(R) [kpc]')
 plt.legend()
 plt.savefig('radialdensityprofile.pdf')
